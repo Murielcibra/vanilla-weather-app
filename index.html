@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <title>Weather App</title>
+    <title>Local National Global Daily Weather Forecast-Tempoweather</title>
   </head>
   <body>
     <div class="container">
@@ -20,6 +20,7 @@
         <div class="date-container">
           <div class="city" id="city">San Francisco</div>
           <div class="date" id="date">September 25, 2022</div>
+          <div class="time">Last Update 15:20 <span id="am-pm">PM</span></div>
           <div class="future-forecast">
             <div class="today" id="current-temp">
               <img
@@ -27,13 +28,17 @@
                 alt="weatherIcon"
                 class="w-icon"
               />
-              <ul>
+              <ul id="description">
                 <li>Clear</li>
               </ul>
-              <div class="temp">72°C |°F</div>
-              <div class="humidity">75%</div>
-              <div class="windsped">2km</div>
+              <div class="others">
+                <div class="day">Mon</div>
+                <div class="temp">72<span id="cF">°C |°F</span></div>
+                <div class="humidity">75%</div>
+                <div class="windsped">2km</div>
+              </div>
             </div>
+
             <div class="weather-forecast" id="weather-forecast">
               <div class="weather-forecast-item">
                 <div class="day">Tue</div>
@@ -98,6 +103,15 @@
             </div>
           </div>
         </div>
+        <img class="motion-image" src="image/rain.gif" />
+        <small>
+          <a
+            href="https://github.com/wecodeschool/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Matt Delac
+        </small>
       </div>
     </div>
   </body>
