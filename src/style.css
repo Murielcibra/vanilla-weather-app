@@ -56,7 +56,7 @@ li::first-letter {
   font-weight: 700;
 }
 
-#cF {
+#units {
   font-size: 20px;
   font-weight: 300;
 }
@@ -94,6 +94,11 @@ li::first-letter {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 0 auto;
+}
+
+.today .units .active {
+  color: whitesmoke;
+  cursor: default;
 }
 small {
   margin-top: 20px;
