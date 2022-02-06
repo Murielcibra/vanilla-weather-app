@@ -11,16 +11,38 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Local National Global Daily Weather Forecast-Tempoweather</title>
   </head>
   <body>
     <div class="container">
       <div class="current-info">
+        <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city.."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
         <div class="date-container">
           <div class="city" id="city">San Francisco</div>
-          <div class="date" id="date">September 25, 2022</div>
-          <div class="time">Last Update 15:20 <span id="am-pm">PM</span></div>
+          <div class="date">Last updated: <span id="date"></span></div>
           <div class="future-forecast">
             <div class="today" id="current-temp">
               <img
@@ -28,14 +50,18 @@
                 alt="weatherIcon"
                 class="w-icon"
               />
-              <ul id="description">
-                <li>Clear</li>
+              <ul>
+                <li id="description">Clear</li>
               </ul>
               <div class="others">
                 <div class="day">Mon</div>
-                <div class="temp">72<span id="cF">°C |°F</span></div>
-                <div class="humidity">75%</div>
-                <div class="windsped">2km</div>
+                <div class="temp" id="temperature">
+                  72<span id="cF">°C |°F</span>
+                </div>
+                <div class="humidity">
+                  Humidity:<span id="humidity">75%</span>
+                </div>
+                <div>Windspeed:<span id="windspeed">2km</span></div>
               </div>
             </div>
 
@@ -106,11 +132,11 @@
         <img class="motion-image" src="image/rain.gif" />
         <small>
           <a
-            href="https://github.com/wecodeschool/vanilla-weather-app"
+            href="https://github.com/Murielcibra/vanilla-weather-app"
             target="_blank"
             >Open-source code</a
           >
-          by Matt Delac
+          by Muriel Cishek
         </small>
       </div>
     </div>

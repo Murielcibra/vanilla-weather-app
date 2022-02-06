@@ -10,7 +10,7 @@ body {
 
 .current-info {
   max-width: 1150px;
-  margin: 200px auto;
+  margin: 150px auto;
   padding: 20px;
   border: 4px solid #dadee1;
   border-radius: 10px;
@@ -28,16 +28,8 @@ body {
   color: whitesmoke;
   font-weight: 300;
 }
-.time {
-  margin-left: 20px;
-  font-size: 20px;
-  color: whitesmoke;
-  font-weight: 300;
-}
-#am-pm {
-  font-size: 15px;
-  color: whitesmoke;
-  font-weight: 300;
+li::first-letter {
+  text-transform: capitalize;
 }
 .future-forecast {
   padding: 35px;
@@ -71,6 +63,9 @@ body {
 .future-forecast .weather-forecast {
   display: flex;
 }
+#temperature {
+  text-transform: capitalize;
+}
 .weather-forecast-item {
   display: flex;
   flex-direction: column;
@@ -99,4 +94,10 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 0 auto;
+}
+small {
+  margin-top: 20px;
+  text-decoration: none;
+  text-transform: none;
+  color: whitesmoke;
 }
