@@ -96,13 +96,38 @@ li::first-letter {
   padding: 0 auto;
 }
 
+.units a {
+  color: whitesmoke;
+  cursor: default;
+  text-decoration: none;
+}
 .today .units .active {
   color: whitesmoke;
   cursor: default;
+  text-decoration: none;
 }
 small {
   margin-top: 20px;
   text-decoration: none;
   text-transform: none;
   color: whitesmoke;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+
+  margin-right: 20px;
+}
+ul {
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  color: whitesmoke;
+  margin: 0 auto;
+  font-weight: 700;
+}
+w-icon {
+  width: 100%;
+  height: 100%;
 }

@@ -43,20 +43,21 @@
         <div class="date-container">
           <div class="city" id="city">San Francisco</div>
           <div class="date">Last updated: <span id="date"></span></div>
+          <ul>
+            <li id="description">Clear</li>
+          </ul>
           <div class="future-forecast">
             <div class="today" id="current-temp">
               <img src="" alt="weatherIcon" class="w-icon" id="icon" />
-              <div id="units">
-                <a href="#" id="celsius-link" class="active">°C </a
-                ><a href="#" id="fahrenheit-link"> °F</a>
-              </div>
-              <ul>
-                <li id="description">Clear</li>
-              </ul>
+
               <div class="others">
                 <div class="day">Mon</div>
 
-                <div class="temp" id="temperature">72</div>
+                <div class="temp" id="temperature">72 <span>°</span></div>
+                <div class="units" id="units">
+                  <a href="#" id="celsius-link" class="active">°C |</a
+                  ><a href="#" id="fahrenheit-link"> °F</a>
+                </div>
 
                 <div class="humidity">
                   Humidity:<span id="humidity">75%</span>
@@ -65,68 +66,7 @@
               </div>
             </div>
 
-            <div class="weather-forecast" id="weather-forecast">
-              <div class="weather-forecast-item">
-                <div class="day">Tue</div>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="weatherIcon"
-                  class="w-icon"
-                />
-                <div class="temp">Night-5&#176;</div>
-                <div class="temp">Day-24&#176;</div>
-              </div>
-              <div class="weather-forecast-item">
-                <div class="day">Wed</div>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="weatherIcon"
-                  class="w-icon"
-                />
-                <div class="temp">Night-5&#176;</div>
-                <div class="temp">Day-24&#176;</div>
-              </div>
-              <div class="weather-forecast-item">
-                <div class="day">Thu</div>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="weatherIcon"
-                  class="w-icon"
-                />
-                <div class="temp">Night-5&#176;</div>
-                <div class="temp">Day-24&#176;</div>
-              </div>
-              <div class="weather-forecast-item">
-                <div class="day">Fri</div>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="weatherIcon"
-                  class="w-icon"
-                />
-                <div class="temp">Night-5&#176;</div>
-                <div class="temp">Day-24&#176;</div>
-              </div>
-              <div class="weather-forecast-item">
-                <div class="day">Sat</div>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="weatherIcon"
-                  class="w-icon"
-                />
-                <div class="temp">Night-5&#176;</div>
-                <div class="temp">Day-24&#176;</div>
-              </div>
-              <div class="weather-forecast-item">
-                <div class="day">Sun</div>
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt="weatherIcon"
-                  class="w-icon"
-                />
-                <div class="temp">Night-5&#176;</div>
-                <div class="temp">Day-24&#176;</div>
-              </div>
-            </div>
+            <div class="weather-forecast" id="weather-forecast"></div>
           </div>
         </div>
         <img class="motion-image" src="image/rain.gif" />
