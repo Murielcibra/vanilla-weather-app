@@ -18,33 +18,54 @@ function formDate(timestamp) {
   let day = days[date.getDay()];
   return `${day}, ${hours}: ${minutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
           <div class="weather-forecast-item">
-                <div class="day">${day}</div>
+                <div class="day">${formatDay(forecastDay.dt)}</div>
+                
                 <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                     src="http://openweathermap.org/img/wn/${
+                       forecastDay.weather[0].icon
+                     }@2x.png""
                   alt="weatherIcon"
                   class="w-icon"
+                  width="42"
                 />
-                <div class="temp">Night-5&#176;</div>
-                <div class="temp">Day-24&#176;</div>
+                <div class="temp">Night ${Math.round(
+                  forecastDay.temp.min
+                )}°;</div>
+                <div class="temp">Day ${Math.round(
+                  forecastDay.temp.max
+                )}°;</div>
               </div>
                   </div>
               `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "f6f001d26151b94d121b17eb30bad8c0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -67,6 +88,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 function search(city) {
   let apiKey = "f6f001d26151b94d121b17eb30bad8c0";
@@ -107,4 +129,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Dominican Republic");
-displayForecast();
