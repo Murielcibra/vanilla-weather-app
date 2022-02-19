@@ -90,10 +90,9 @@ li::first-letter {
   border-top: 6px solid whitesmoke;
   height: 100%;
   object-fit: contain;
-  margin: 0 auto;
+  padding-top: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  padding: 0 auto;
 }
 
 .units a {

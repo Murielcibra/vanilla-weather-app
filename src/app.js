@@ -93,36 +93,37 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 function changeBackgroundImage(weatherMain) {
+  let motionImage = document.querySelector("#motion-image");
   if (weatherMain === "Clear") {
-    document.body.style.backgroundImage =
-      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/552/original/sunny.jpg?1645303424')";
+    document.body.style.backgroundImage = "url('../image/sunny.jpg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    motionImage.src = "../image/clear.gif";
   } else if (weatherMain === "Rain") {
-    document.body.style.backgroundImage =
-      "url('https://images.pexels.com/photos/1077536/pexels-photo-1077536.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')";
+    document.body.style.backgroundImage = "url('../image/rain.jpg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    motionImage.src = "../image/rain.gif";
   } else if (weatherMain === "Clouds") {
-    document.body.style.backgroundImage =
-      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/554/original/clouds2.jpg?1645303795')";
+    document.body.style.backgroundImage = "url('../image/cloudss.jpg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    motionImage.src = "../image/clouds.gif";
   } else if (weatherMain === "Thunderstorm") {
-    document.body.style.backgroundImage =
-      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/556/original/pexels-johannes-plenio-1118869.jpg?1645303914')";
+    document.body.style.backgroundImage = "url('../image/thunder.jpg')')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    motionImage.src = "../image/thunderstorm.gif";
   } else if (weatherMain === "Haze") {
-    document.body.style.backgroundImage =
-      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/558/original/pexels-eberhard-grossgasteiger-4406662.jpg?1645303946')";
+    document.body.style.backgroundImage = " url('../image/fog.jpg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    motionImage.src = "../image/fog.gif";
   } else if (weatherMain === "Snow") {
-    document.body.style.backgroundImage =
-      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/559/original/snow.jpg?1645304043')";
+    document.body.style.backgroundImage = " url('../image/snow.jpg')";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    motionImage.src = "../image/snow.gif";
   }
 }
 function search(city) {
@@ -163,4 +164,4 @@ fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("Dominican Republic");
+search("Santo Domingo");
