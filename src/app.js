@@ -43,7 +43,7 @@ function displayForecast(response) {
                      }@2x.png""
                   alt="weatherIcon"
                   class="w-icon"
-                  width="42"
+                  width="100"
                 />
                 <div class="temp">Night ${Math.round(
                   forecastDay.temp.min
@@ -74,6 +74,8 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#windspeed");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+  let weatherMain = response.data.weather[0].main;
+  changeBackgroundImage(weatherMain);
 
   celsiusTemperature = response.data.main.temp;
 
@@ -89,6 +91,39 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
+}
+function changeBackgroundImage(weatherMain) {
+  if (weatherMain === "Clear") {
+    document.body.style.backgroundImage =
+      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/552/original/sunny.jpg?1645303424')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  } else if (weatherMain === "Rain") {
+    document.body.style.backgroundImage =
+      "url('https://images.pexels.com/photos/1077536/pexels-photo-1077536.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  } else if (weatherMain === "Clouds") {
+    document.body.style.backgroundImage =
+      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/554/original/clouds2.jpg?1645303795')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  } else if (weatherMain === "Thunderstorm") {
+    document.body.style.backgroundImage =
+      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/556/original/pexels-johannes-plenio-1118869.jpg?1645303914')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  } else if (weatherMain === "Haze") {
+    document.body.style.backgroundImage =
+      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/558/original/pexels-eberhard-grossgasteiger-4406662.jpg?1645303946')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  } else if (weatherMain === "Snow") {
+    document.body.style.backgroundImage =
+      "url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/027/559/original/snow.jpg?1645304043')";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  }
 }
 function search(city) {
   let apiKey = "f6f001d26151b94d121b17eb30bad8c0";
