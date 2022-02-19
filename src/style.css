@@ -111,6 +111,12 @@ small {
   text-transform: none;
   color: whitesmoke;
 }
+samll a:link,
+a:visited,
+a:hover,
+a:active {
+  color: whitesmoke;
+}
 
 .units {
   position: relative;
